@@ -5,9 +5,20 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:RestaurantManager.Models"
     mc:Ignorable="d"
     Background="White" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-
+    <Page.DataContext>
+        <data:DataManager/>
+    </Page.DataContext>
+    <Page.Resources>
+        <Style x:Key="TextBlockFontSize" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="32"/>
+        </Style>
+        <Style x:Key="ButtonFontSize" TargetType="Button">
+            <Setter Property="FontSize" Value="32"/>
+        </Style>
+    </Page.Resources>
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -19,15 +30,15 @@
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Foreground="Black" FontSize="33" Text="Internal Test Version" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="43" Margin="0,28,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Grid.RowSpan="2"/>
-        <Button Click="Button_Click" Content="Go To View Orders" FontSize="30" HorizontalAlignment="Left" Height="100" Margin="234,24,0,0" Grid.Row="2" VerticalAlignment="Top" Width="300" FocusVisualPrimaryBrush="White"/>
-        <Button Click="Button_Click_1" Content="Submit Orders" FontSize="30" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="177,24,0,0" Grid.Row="2"  VerticalAlignment="Top" Width="300"/>
+        <TextBlock Style="{StaticResource TextBlockFontSize}" Foreground="Black" Text="Internal Test Version" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="43" Margin="0,28,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Grid.RowSpan="2"/>
+        <Button Click="Button_Click" Content="Go To View Orders" Style="{StaticResource ButtonFontSize}" HorizontalAlignment="Left" Height="100" Margin="234,24,0,0" Grid.Row="2" VerticalAlignment="Top" Width="300" FocusVisualPrimaryBrush="White"/>
+        <Button Click="Button_Click_1" Content="Submit Orders" Style="{StaticResource ButtonFontSize}" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="177,24,0,0" Grid.Row="2"  VerticalAlignment="Top" Width="300"/>
         <CommandBar Grid.ColumnSpan="2" Margin="-10,10,-10,0" VerticalAlignment="Top">
             <CommandBar.Content>
                 <Grid/>
             </CommandBar.Content>
             <AppBarButton Click="AppBarButton_Click" Icon="Home" Label="AppBarButton"/>
         </CommandBar>
-        <TextBlock FontSize="50" HorizontalAlignment="Center" Margin="0,97,0,0" Text="Restaurant Manager" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="446"/>
+        <TextBlock FontSize="50" HorizontalAlignment="Left" Margin="418,97,0,0" Text="Restaurant Manager" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="470"/>
     </Grid>
 </Page>

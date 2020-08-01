@@ -5,9 +5,12 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:RestaurantManager.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.DataContext>
+        <data:DataManager/>
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.9*"/>
@@ -20,5 +23,7 @@
             </CommandBar.Content>
             <AppBarButton Click="AppBarButton_Click" Icon="Home" Label="AppBarButton"/>
         </CommandBar>
+        <GridView x:Name="OrderMenuListview" ItemsSource="{Binding OrderItems}" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" Width="1260" Height="48"/>
+        <!--<ListView HorizontalAlignment="Center" Height="100" Margin="0,55,0,0" VerticalAlignment="Top" Width="1260" x:Name="OrderMenuListview" ItemsSource="{Binding OrderItems}"/>-->
     </Grid>
 </Page>
